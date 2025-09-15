@@ -1,6 +1,8 @@
     <?php
     // Initialize cURL session
     $ch = curl_init();
+
+    echo "yerrr!";
     
     $(function(){
   

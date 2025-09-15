@@ -1,0 +1,52 @@
+
+input {
+    border: 1px solid #4195fc; /* some kind of blue border */
+
+    /* other CSS styles */
+
+    /* round the corners */
+    -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+            border-radius: 4px;
+
+
+    /* make it glow! */
+    -webkit-box-shadow: 0px 0px 4px #4195fc;
+       -moz-box-shadow: 0px 0px 4px #4195fc;
+            box-shadow: 0px 0px 4px #4195fc; /* some variation of blue for the shadow */
+
+}
+
+.container {
+    row-gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width:20%;
+  /* height: 12%;
+  -webkit-box-shadow: 7px -5px 10px 0px #4b0082, 11px -9px 10px 0px #0000ff, 16px -14px 10px 0px #00ff00, 20px -17px 10px 0px #ffff00, 24px -19px 10px 0px #ff7f00, 27px -23px 10px 0px #ff0000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: 7px -5px 10px 0px #4b0082, 11px -9px 10px 0px #0000ff, 16px -14px 10px 0px #00ff00, 20px -17px 10px 0px #ffff00, 24px -19px 10px 0px #ff7f00, 27px -23px 10px 0px #ff0000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+  border-radius: 20px; */
+}
+
+.button--dark {
+  align-items: center;
+	border-color: var(#eee) var(#111) var(#111) var(#eee);
+  background: #000;
+  color: red;
+	border-top-color: var(#111);
+  border-left-color: var(#111);
+  padding: 2px 4px 2px 2px;
+
+  &:hover {
+  background: #660;
+  }
+  
+  &::before {
+		background: #660000;
+    content: "🎃";
+    text-shadow: 0 0 4px black;
+  }
+}
+
