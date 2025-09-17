@@ -1,4 +1,8 @@
 
+body {
+    background: red;
+}
+
 input {
     border: 1px solid #4195fc; /* some kind of blue border */
 
@@ -18,19 +22,19 @@ input {
 }
 
 .container {
+  padding: 15px 0 15px 0;
     row-gap: 10px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     width:20%;
-  /* height: 12%;
+  height: 12%;
   -webkit-box-shadow: 7px -5px 10px 0px #4b0082, 11px -9px 10px 0px #0000ff, 16px -14px 10px 0px #00ff00, 20px -17px 10px 0px #ffff00, 24px -19px 10px 0px #ff7f00, 27px -23px 10px 0px #ff0000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
   box-shadow: 7px -5px 10px 0px #4b0082, 11px -9px 10px 0px #0000ff, 16px -14px 10px 0px #00ff00, 20px -17px 10px 0px #ffff00, 24px -19px 10px 0px #ff7f00, 27px -23px 10px 0px #ff0000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-  border-radius: 20px; */
+  border-radius: 20px;
 }
-
-.button--dark {
+#loginBtn {
   align-items: center;
 	border-color: var(#eee) var(#111) var(#111) var(#eee);
   background: #000;
