@@ -15,9 +15,9 @@
 </head>
 
 <body>
-
+    <img id="pic" style="display:none;" src="https://static1.squarespace.com/static/ta/577c006b725e25e0affed0c1/2729/assets/img/brand/expensify-approved-badge.png" alt="Expensify Approved this, I swear!">
     <h1>boo</h1>
-    <p>This is a static HTML page served through PHP.</p>
+    <p>This is a static HTML page served through PHP. You're&nbsp;WELCOME!</p>
     <div class="container" id="loginContent">
           <form id="loginForm">
         <input id="email" name="partnerUserID" type="email" placeholder="e-mail" required />
@@ -26,8 +26,26 @@
           </form>
     </div>
     <p class="textContent"></p>
+    
+    <div id="loader" style="display:none;"></div>
 
-     <div id="transactionTable">
+    <div id="transactionTable" style="display:none;">
+
+        <button id="myBtn">Open Modal</button>
+            <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p id="modal-text">add your transaction, bestie</p>
+                <form id="modalForm">
+            <input id="date" name="date" type="date" placeholder="date" required />
+            <input id="merch" name="merch" type="text" placeholder="merchant" required />
+            <input id="amount" name="amount" type="number" min="0.00" max="10000.00" step="0.01" placeholder="100.00" required />
+            <button id="create" type="submit">+ADD+</button>
+            </form>
+            </div>
+            </div>
+
+     
         <h1>Transactions:</h1>
         <table>
 
@@ -40,7 +58,7 @@
             </thead>
 
             <tbody id="transactionTableBody">
-                <!-- Add the transaction rows here -->
+                <!-- Add the transaction rows here -->          
             </tbody>
 
         </table>

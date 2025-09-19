@@ -1,17 +1,30 @@
 <?php
 header("Content-Type: application/json");
 
-$email = $_POST['partnerUserID'] ?? '';
-$password = $_POST['partnerUserSecret'] ?? '';
+$command = $_GET['command'] ?? 'Authenticate';
 
 $data = [
-    "partnerName"      => "applicant",
-    "partnerPassword"  => "d7c3119c6cdab02d68d9",
-    "partnerUserID"    => $email,
-    "partnerUserSecret"=> $password
+    "partnerName"     => "applicant",
+    "partnerPassword" => "d7c3119c6cdab02d68d9"
 ];
 
-$ch = curl_init("https://www.expensify.com/api/Authenticate");
+if ($command === "Authenticate") {
+    // Login call requires email + password
+    $data["partnerUserID"]     = $_POST["partnerUserID"] ?? '';
+    $data["partnerUserSecret"] = $_POST["partnerUserSecret"] ?? '';
+} elseif ($command === "Get") {
+    // Forward whatever else JS sent (e.g. authToken, returnValueList)
+    $data = array_merge($data, $_POST);
+} elseif ($command === "CreateTransaction") {
+   $data["merchant"] = $_POST["merch"] ?? '';  
+    $data["amount"]   = $_POST["amount"] ?? '';  
+    $data["created"]  = $_POST["date"] ?? '';   
+    $data["authToken"] = $_POST["authToken"] ?? '';
+}
+
+$url = "https://www.expensify.com/api/" . $command;
+$ch = curl_init($url);
+
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_HTTPHEADER, [
     "expensifyengineeringcandidate: xyz" 
@@ -25,6 +38,7 @@ curl_close($ch);
 
 // echo raw JSON back to the browser
 echo $response;
+
 
 
 
